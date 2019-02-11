@@ -24,15 +24,23 @@ module.exports = {
           'sass-loader'
         ]
       },
+      // {
+      //   test: /\.(m?js)(\.(sa|sc|c)ss)?$/,
+      //   exclude: /(node_modules|bower_components)/,
+      //   use: {
+      //     loader: 'babel-loader',
+      //     options: {
+      //       // presets: ['env', 'es2017', 'es2015', 'stage-3', 'react'],
+      //       presets: ["@babel/preset-env"],
+      //       // plugins: ['@babel/plugin-transform-runtime', '@babel/preset-env', '@babel/react']
+      //     }
+      //   }
+      // },
       {
-        test: /\.(m?js)(\.(sa|sc|c)ss)?$/,
-        exclude: /(node_modules|bower_components)/,
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
         use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['env', 'es2017', 'es2015', 'stage-3'],
-            plugins: ['transform-runtime']
-          }
+          loader: 'babel-loader'
         }
       },
       {
