@@ -1,0 +1,45 @@
+.weather-box
+  position: relative
+  &__current-weather
+    display: table
+    &>*
+      display: table-row
+    span
+      display: table-cell
+      text-transform: uppercase
+      padding: .3rem 1rem
+    &__status
+      span:nth-child(odd)
+        &::after
+          content: ':'
+          margin-right: 1ch
+    &__temperature
+      span
+        &:nth-child(odd)
+          &::after
+            content: ':'
+            margin-right: 1ch
+        &:nth-child(even)
+          &::after
+            content: '°C'
+            margin-left: .5ch
+    &__pressure
+      span
+        &:nth-child(odd)
+          &::after
+            content: ':'
+            margin-right: 1ch
+        &:nth-child(even)
+          &::after
+            content: 'p'
+            margin-left: .5ch
+    &__humidity
+      span
+        &:nth-child(odd)
+          &::after
+            content: ':'
+            margin-right: 1ch
+        &:nth-child(even)
+          &::after
+            content: '%'
+            margin-left: .5ch

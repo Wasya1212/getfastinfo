@@ -1,13 +1,14 @@
-$margin: .5rem
-
 .news-box
   position: relative
-  width: calc((100% / 3) - #{$margin * 2})
+  width: calc((100% - 1.5rem) / 3})
   background-color: #fff
   border-radius: 0 0 5px 0
+  margin-bottom: .75rem
   padding: 1rem
   box-sizing: border-box
-  margin: $margin
+  &:nth-child(3n+2)
+    margin-left: .75rem
+    margin-right: .75rem
   &__preview
     position: relative
     width: 100%

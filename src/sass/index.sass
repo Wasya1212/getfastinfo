@@ -1,4 +1,10 @@
 @import "./components/news.sass"
+@import "./components/weather.sass"
+@import "./components/currency.sass"
+@import "./components/ip.sass"
+
+@import "./media.sass"
+@import "./variables.sass"
 
 img
   position: relative
@@ -12,7 +18,22 @@ a
   color: black
 
 body
-  background-color: #f7f7f7
+  background-color: $main-bg-color
+
+h2
+  text-align: center
+  background-color: #fff
+  border-radius: 10px
+  text-transform: capitalize
+  display: inline-block
+  padding: .5rem 1rem
+  margin: .5rem 0
+  cursor: default
+  user-select: none
+  font-size: 30px
+
+h1, h2, h3, h4, h5
+  cursor: default
 
 .news-section
   position: relative
@@ -23,3 +44,27 @@ body
   justify-content: flex-start
   align-items: stretch
   flex-wrap: wrap
+
+.weather-section
+  background-color: #fff
+  padding: 1rem
+  border-radius: 10px
+  box-sizing: border-box
+
+.currency-section
+  position: relative
+
+
+.location-info
+  padding: 1rem
+  box-sizing: border-box
+  background-color: #fff
+  border-radius: 10px
+  width: 100%
+  display: -webkit-flex
+  display: -ms-flex
+  display: flex
+  align-items: flex-start
+  flex-direction: row-reverse
+  &>*
+    width: 50%
