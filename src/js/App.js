@@ -5,6 +5,7 @@ import AppNews from './components/AppNews.jsx'
 import AppWeather from './components/AppWeather.jsx'
 import AppCurrency from './components/AppCurrency.jsx'
 import AppIpInfo from './components/AppIpInfo.jsx'
+import AppFooter from './components/AppFooter.jsx'
 
 import NewsAPI from "newsapi"
 import DATA from './data.js'
@@ -53,31 +54,33 @@ class App extends Component {
 
   render() {
     return (
-      <main className="main">
+      <div className="content">
         <AppHeader />
-        <center><h2>Currency Exchange & IP Info</h2></center>
-        <aside className="location-info">
-          <div className="ipinfo-section">
-            <AppIpInfo ipInfo={DATA.ipInfo}/>
+        <main className="main">
+          <center><h2>Currency Exchange & IP Info</h2></center>
+          <aside className="location-info">
+            <div className="ipinfo-section">
+              <AppIpInfo ipInfo={DATA.ipInfo}/>
+            </div>
+            <div className="currency-section">
+              <AppCurrency rates={DATA.currency.rates} date={DATA.currency.date} base={DATA.currency.base} />
+            </div>
+          </aside>
+          <center><h2>Weather Info</h2></center>
+          <div className="weather-section">
+            <AppWeather city="Lviv" country="UA" weather={DATA.weather.list} />
           </div>
-          <div className="currency-section">
-            <AppCurrency rates={DATA.currency.rates} date={DATA.currency.date} base={DATA.currency.base} />
+          <center><h2>Latest News</h2></center>
+          <div className="news-section">
+            {
+              this.state.news.map((news, index) => (
+                <AppNews key={`news-${index}`} author={news.author} title={news.title} date={getNormalTime(news.publishedAt)} url={news.url} previewImage={news.urlToImage}>{news.description}</AppNews>
+              ))
+            }
           </div>
-        </aside>
-        <center><h2>Weather Info</h2></center>
-        <div className="weather-section">
-          <AppWeather city="Lviv" country="UA" weather={DATA.weather.list} />
-        </div>
-        <center><h2>Latest News</h2></center>
-        <div className="news-section">
-          {
-            this.state.news.map((news, index) => (
-              <AppNews key={`news-${index}`} author={news.author} title={news.title} date={getNormalTime(news.publishedAt)} url={news.url} previewImage={news.urlToImage}>{news.description}</AppNews>
-            ))
-          }
-        </div>
-        <div>{title}</div>
-      </main>
+        </main>
+        <AppFooter />
+      </div>
     )
   }
 }

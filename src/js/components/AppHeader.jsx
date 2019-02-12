@@ -1,11 +1,9 @@
-import React, { Component } from "react"
+import React from "react"
 
-class AppHeader extends Component {
-  render() {
-    return (
-      <div>Hello header</div>
-    )
-  }
+const AppHeader = function(props) {
+  return (
+    <header className="header">FastInfo.com</header>
+  )
 }
 
 export default AppHeader

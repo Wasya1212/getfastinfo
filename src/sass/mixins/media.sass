@@ -1,0 +1,18 @@
+$pc: 1366px // ipad pro resolution
+$largeTablet: 960px
+$tablet: 720px
+$phone: 320px
+
+@mixin responsive($media)
+  @if $media == phone
+    @media only screen and (max-width: $tablet - 1)
+      @content
+  @else if $media == tablet
+    @media only screen and (min-width: $tablet - 1) and (max-width: $largeTablet)
+      @content
+  @else if $media == pc
+    @media only screen and (min-width: $pc)
+      @content
+  @else if $media == pc_tablet
+    @media only screen and (min-width: $largeTablet - 1) and (max-width: $pc)
+      @content

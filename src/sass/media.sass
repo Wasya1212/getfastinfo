@@ -1,0 +1,62 @@
+@import "./mixins/media.sass"
+
+// main section
+// responsive design options
+.main
+  @include responsive(pc)
+    width: calc(100% - 350px - .5rem)
+    center:first-child
+      display: none
+
+
+// info section
+// responsive design options
+
+.location-info
+  @include responsive(pc)
+    position: fixed
+    right: .5rem
+    top: 50%
+    z-index: 100
+    width: 350px
+    flex-direction: column
+    max-height: calc(100vh - 120px)
+    transform: translateY(-50%)
+  @include responsive(pc_tablet)
+    flex-direction: row-reverse
+    &>div
+      width: 50%
+  @include responsive(tablet)
+    flex-direction: row-reverse
+    &>div
+      width: 50%
+  @include responsive(phone)
+    flex-direction: column
+
+// weather section
+// responsive design options
+.weather-section
+  @include responsive(phone)
+    canvas
+      display: none !important
+
+// news section
+// responsive design options
+.news-section
+  position: relative
+  @include responsive(pc)
+    .news-box
+      width: calc((100% - 2rem) / 4})
+  @include responsive(pc_tablet)
+    justify-content: flex-start !important
+    .news-box
+      width: calc((100% - 1.5rem) / 3})
+      &:nth-child(3n+2)
+        margin-left: .75rem
+        margin-right: .75rem
+  @include responsive(tablet)
+    .news-box
+      width: calc((100% - 1.5rem) / 2})
+  @include responsive(phone)
+    .news-box
+      width: 100%
