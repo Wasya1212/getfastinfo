@@ -84,6 +84,10 @@ function getRelatedRatesNamesByCountryCode(currencyCountryCode) {
       ratesNames = [ 'USD', 'EUR' ]
       base = 'RUB'
       break;
+    case 'se': // for Swedish
+      ratesNames = [ 'USD', 'EUR', 'GBP', 'RUB' ]
+      base = 'SEK'
+      break;
     case 'gb': // for United Kingdom
       ratesNames = [ 'USD', 'EUR', 'PLN' ]
       base = 'GBP'
