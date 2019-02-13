@@ -48,6 +48,7 @@ export default class App extends Component {
         news: await googlenewsapi.getTopHeadlines({city: ipInfo.city, language: ipInfo.country_code, country: ipInfo.country_code })
       }))
       .then(userInfo => {
+        console.log(userInfo)
         this.setState({
           news: userInfo.news.articles,
           weather: userInfo.weather,
