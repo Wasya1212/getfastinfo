@@ -13,7 +13,7 @@ class AppIpInfo extends Component {
           Object.keys(this.props.ipInfo).map((key, index) => (
             <div key={`ipInfo-${index}`} className="ip-info-box__category">
               <span className="ip-info-box__category__name">{key}</span>
-              <span className="ip-info-box__category__value">{this.props.ipInfo[key]}</span>
+              <span className="ip-info-box__category__value">{this.props.ipInfo[key].toString()}</span>
             </div>
           ))
         }
